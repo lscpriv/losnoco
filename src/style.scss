@@ -1,0 +1,68 @@
+@font-face {
+    font-family: "Inter LoSnoCo";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("inter_losnoco.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter LoSnoCo";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("inter_losnoco_italic.woff2") format("woff2");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,MONO@-15..0,300..1000,1&display=swap');
+
+$primary: rgb(94, 0, 145);
+$enable-dark-mode: true;
+$color-mode-type: media-query;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html,
+body {
+    font-family: 'Inter LoSnoCo', "Inter", sans-serif;
+    hyphens: auto;
+    //letter-spacing: -0.025em;
+}
+
+h1 {
+    font-weight: 1000;
+}
+h2 {
+    font-weight: 800;
+}
+h3 {
+    font-weight: 600;
+}
+h4 {
+    font-weight: 400;
+}
+
+
+
+em {
+    font-variation-settings: "slnt" -15;
+}
+
+.headline {
+    font-size: 16pt;
+}
+
+.casual {
+    font-variation-settings: "CASL" 1 !important;
+}
+
+
+code,
+pre {
+    font-family: 'Recursive', monospace;
+    font-variation-settings: "MONO" 1;
+}
+
+img {
+    @extend .img-fluid, .mx-auto, .d-block;
+}
