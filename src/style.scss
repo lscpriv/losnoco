@@ -16,11 +16,45 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,MONO@-15..0,300..1000,1&display=swap');
 
-$primary: rgb(94, 0, 145);
+@import "../node_modules/bootstrap/scss/functions";
+
+
+$primary: rgb(255, 115, 0);
 $enable-dark-mode: true;
 $color-mode-type: media-query;
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+$custom-colors: (
+  "chris": rgb(0, 123, 134),
+  "kevin": rgb(255, 157, 77)
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+@import "../node_modules/bootstrap/scss/utilities";
+
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/alert";
+@import "../node_modules/bootstrap/scss/list-group";
+
+@import "../node_modules/bootstrap/scss/helpers";
+
+
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+//@import "../node_modules/bootstrap/scss/bootstrap";
 
 html,
 body {
@@ -65,4 +99,8 @@ pre {
 
 img {
     @extend .img-fluid, .mx-auto, .d-block;
+}
+
+.drop-shadow {
+    filter: drop-shadow(0px 5px 5px #00000089);
 }
