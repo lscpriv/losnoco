@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "bootstrap": "5.3.3",
-    "parcel-reporter-static-files-copy": "^1.5.3"
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "svgo": "^3.3.2"
   },
   "source": "src/index.html",
   "trustedDependencies": [
