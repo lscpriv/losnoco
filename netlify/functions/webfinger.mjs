@@ -8,7 +8,7 @@ async function handler(resource) {
     }
 
     const validAccounts = {
-        "kevin@losno.co": {
+        "acct:kevin@losno.co": {
             subject: "acct:kevin@losno.co",
             links: [
                 {
@@ -17,7 +17,7 @@ async function handler(resource) {
                 },
             ],
         },
-        "chris@losno.co": {
+        "acct:chris@losno.co": {
             subject: "acct:chris@losno.co",
             links: [
                 {
@@ -29,7 +29,6 @@ async function handler(resource) {
     };
 
     const account = validAccounts[resource];
-
 
     if (!account) {
         return {
