@@ -1,25 +1,4 @@
 // =============================================
-// LoSnoCo — Custom font faces
-// =============================================
-
-@font-face {
-    font-family: "Inter LoSnoCo";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("inter_losnoco.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Inter LoSnoCo";
-    font-style: italic;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("inter_losnoco_italic.woff2") format("woff2");
-}
-
-
-// =============================================
 // LoSnoCo — Color tokens
 // =============================================
 
@@ -29,6 +8,7 @@
     --orange:     #F25E0D;
     --teal:       #0DF2C9;
     --teal-light: #00967F;
+    --purple:     #7b41b9;
     --bg:         #F4F3F0;
     --surface:    #ECEAE5;
     --border:     #D8D5CE;
