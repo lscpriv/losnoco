@@ -1,3 +1,7 @@
+// =============================================
+// LoSnoCo — Custom font faces
+// =============================================
+
 @font-face {
     font-family: "Inter LoSnoCo";
     font-style: normal;
@@ -14,25 +18,48 @@
     src: url("inter_losnoco_italic.woff2") format("woff2");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,MONO@-15..0,300..1000,1&display=swap');
+
+// =============================================
+// LoSnoCo — Color tokens
+// =============================================
+
+:root {
+    --black:      #000000;
+    --white:      #FFFFFF;
+    --orange:     #F25E0D;
+    --teal:       #0DF2C9;
+    --teal-light: #00967F;
+    --bg:         #F4F3F0;
+    --surface:    #ECEAE5;
+    --border:     #D8D5CE;
+    --muted:      #888880;
+    --text:       #1A1917;
+}
+
+
+// =============================================
+// Bootstrap — Variable overrides
+// =============================================
 
 @import "../node_modules/bootstrap/scss/functions";
 
-
-$primary: rgb(255, 115, 0);
-$enable-dark-mode: true;
-$color-mode-type: media-query;
+$font-family-sans-serif: "Inter LoSnoCo", "Inter", sans-serif;
+$body-bg:          #F4F3F0;
+$body-color:       #1A1917;
+$primary:          #F25E0D;
+$secondary:        #888880;
+$border-color:     #D8D5CE;
+$border-radius:    10px;
+$border-radius-sm: 6px;
+$border-radius-lg: 10px;
+$card-bg:          #ECEAE5;
+$card-border-color: #D8D5CE;
+$enable-shadows:   false;
+$enable-gradients: false;
+$enable-dark-mode: false;
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
-
-$custom-colors: (
-  "chris": rgb(63, 212, 176),
-  "kevin": rgb(255, 157, 77)
-);
-
-$theme-colors: map-merge($theme-colors, $custom-colors);
-
 
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
@@ -45,62 +72,140 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../node_modules/bootstrap/scss/images";
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
-@import "../node_modules/bootstrap/scss/card";
-@import "../node_modules/bootstrap/scss/alert";
-@import "../node_modules/bootstrap/scss/list-group";
-
 @import "../node_modules/bootstrap/scss/helpers";
-
 
 @import "../node_modules/bootstrap/scss/utilities/api";
 
-//@import "../node_modules/bootstrap/scss/bootstrap";
 
-html,
-body {
-    font-family: 'Inter LoSnoCo', "Inter", sans-serif;
-    hyphens: auto;
-    //letter-spacing: -0.025em;
-}
+// =============================================
+// LoSnoCo — Base
+// =============================================
 
-h1 {
-    font-weight: 1000;
-}
-h2 {
-    font-weight: 800;
-}
-h3 {
-    font-weight: 600;
-}
-h4 {
-    font-weight: 400;
+html, body {
+    font-family: "Inter LoSnoCo", "Inter", sans-serif;
+    font-feature-settings: "ss01","ss02","ss03","tnum","case","dlig";
+    background: var(--bg);
+    color: var(--text);
 }
 
-
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 em {
     font-variation-settings: "slnt" -15;
 }
 
-.headline {
-    font-size: 16pt;
+
+// =============================================
+// LoSnoCo — Layout
+// =============================================
+
+.lsn-center {
+    width: 100%;
+    max-width: 540px;
 }
 
-.casual {
-    font-variation-settings: "CASL" 1 !important;
+
+// =============================================
+// LoSnoCo — Wordmark
+// =============================================
+
+.lsn-wordmark {
+    width: 200px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 
-code,
-pre {
-    font-family: 'Recursive', monospace;
-    font-variation-settings: "MONO" 1;
+// =============================================
+// LoSnoCo — Member grid
+// =============================================
+
+.lsn-member-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-img {
-    @extend .img-fluid, .mx-auto, .d-block;
+.lsn-member-block {
+    display: block;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: filter 0.15s;
+
+    &:hover { filter: brightness(0.92); }
 }
 
-.drop-shadow {
-    filter: drop-shadow(0px 5px 5px #00000089);
+.lsn-block-kevin {
+    background: var(--orange);
+    color: #fff;
+}
+
+.lsn-block-chris {
+    background: var(--teal);
+    color: var(--text);
+}
+
+
+// =============================================
+// LoSnoCo — Avatar
+// =============================================
+
+.lsn-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+
+// =============================================
+// LoSnoCo — Member info
+// =============================================
+
+.lsn-member-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.25rem;
+}
+
+.lsn-member-handle {
+    font-size: 0.78rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+
+// =============================================
+// LoSnoCo — Full-width link
+// =============================================
+
+$bluesky: rgb(0, 106, 255);
+
+.lsn-full-link {
+    display: block;
+    padding: 0.85rem 1.5rem;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    background: $bluesky;
+    border-radius: 6px;
+    transition: background 0.12s;
+
+    &:hover { background: darken($bluesky, 10%); }
 }
