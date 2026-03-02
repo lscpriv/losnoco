@@ -8,12 +8,24 @@
     --orange:     #F25E0D;
     --teal:       #0DF2C9;
     --teal-light: #00967F;
-    --purple:     #7b41b9;
+    --purple:     #7B41B9;
+
+    // Light theme surfaces (default)
     --bg:         #F4F3F0;
     --surface:    #ECEAE5;
     --border:     #D8D5CE;
     --muted:      #888880;
     --text:       #1A1917;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg:      #1A1917;
+        --surface: #242220;
+        --border:  #38352F;
+        --muted:   #888880;
+        --text:    #F4F3F0;
+    }
 }
 
 
@@ -63,7 +75,6 @@ $enable-dark-mode: false;
 
 html, body {
     font-family: "Inter LoSnoCo", "Inter", sans-serif;
-    font-feature-settings: "ss01","ss02","ss03","tnum","case","dlig";
     background: var(--bg);
     color: var(--text);
 }
